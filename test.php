@@ -9,7 +9,7 @@
 	//$login = 'u5415399';
 	//$passwd = 'dfsfadf';
 	$login = 'vasabrp';
-	$passwd = 'k0rnk4m0l';	
+	$passwd = '';	
 	
 	$url = "http://multimedia.bis.au.edu/authen/index2.php?user=" . $login . "&pass=" . $passwd;
 	$data = file_get_contents($url);
