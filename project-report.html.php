@@ -82,6 +82,14 @@
     <input type="text" name="owner" id="owner" placeholder="Prepared by [name]" readonly required />
   </div>
   <div class="form-group">
+    <label for="id">User ID *</label>
+    <input type="text" name="id" id="id" placeholder="Prepared by [ID]" readonly required />
+  </div>
+  <div class="form-group">
+    <label for="id">Add time stamp here</label>
+    <input type="hidden" name="timestamp" id="timestamp" />
+  </div>
+  <div class="form-group">
     <label for="summary">Summary *</label>
     <textarea name ="summary" row="6" cols="50" placeholder="Summary of content learned from the event" ></textarea>
   </div>
