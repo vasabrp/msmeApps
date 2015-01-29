@@ -1,22 +1,24 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/git/msmeERP/inc/helpers.inc.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Project Summary Report</title>
-<link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<form action="?<?php htmlout($action);?>" method="post">
+<form action="project-report.php" method="post">
   <div class="form-group">
     <label for="school">School</label>
     <select name="school" required>
       <option>Martin de Tours School of Management and Economics</option>
     </select>
   </div>
-  <div>
-  </div>
+
   <div class="form-group">
     <label for="dept">Department </label>
     <select name="dept" required>
@@ -98,9 +100,14 @@
     <textarea name ="application" id ="application" row="6" cols="50" placeholder="Applied to Teaching and Learning (any T&L or any BIS subjects related to the event)" required ></textarea>
   </div>
   <div class="form-group">
-    <label for="files">Support Documents, e.g., invitation letter, registration confirmation, photos *<br/><span class="current">Please "zip" the files if you have more than one documents</span>.</label>
-     <!-- File input filed -->
-	<input type="file" name="myFile" id="myFile" required />
+    <label for="files">Support Documents, e.g., invitation letter, registration confirmation, photos *<br/>
+	<span class="current">Please "zip" the files if you have more than one documents.</span></label>
+    <!-- input files -->
+	<input type="file" name="myFile1" id="myFile1"  /><br/>
+	<input type="file" name="myFile2" id="myFile2"  /><br/>
+	<input type="file" name="myFile3" id="myFile3"  /><br/>
+	<input type="file" name="myFile4" id="myFile4"  /><br/>
+	<input type="file" name="myFile5" id="myFile5"  />
   </div>
 
   <input type="submit">
