@@ -2,9 +2,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Project Summary Report</title>
-
+<script>
+$(document).ready(function(){
+    $('.add_more').click(function(e){
+        e.preventDefault();
+        $(this).before("<input name='files[]' type='file'/>");
+    });
+});
+</script>
 <div class="container">
-<form action="project-report.php" method="post">
+<form  enctype="multipart/form-data" action="project-report.php" method="post">
   <div class="form-group">
     <label for="school">School</label>
     <select name="school" required>
@@ -90,13 +97,11 @@
   </div>
   <div class="form-group">
     <label for="files">Support Documents, e.g., invitation letter, registration confirmation, photos *<br/>
-	<span class="current">Please "zip" the files if you have more than one documents.</span></label>
+	<span class="current">Please "zip" the files if you have more than one documents.</span></label><br />
     <!-- input files -->
-	<input type="file" name="myFile1" id="myFile1"  /><br/>
-	<input type="file" name="myFile2" id="myFile2"  /><br/>
-	<input type="file" name="myFile3" id="myFile3"  /><br/>
-	<input type="file" name="myFile4" id="myFile4"  /><br/>
-	<input type="file" name="myFile5" id="myFile5"  />
+	<input name="files[]" type="file" /><br />
+	<input name="files[]" type="file" /><br />
+	<button class="add_more">Add More Files</button>	
   </div>
 
   <input type="submit">
