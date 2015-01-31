@@ -1,16 +1,9 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Project Summary Report</title>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-</head>
-<body>
 
+<div class="container">
 <form action="project-report.php" method="post">
   <div class="form-group">
     <label for="school">School</label>
@@ -72,7 +65,7 @@
     <input type="text" name="organizer" id="organizer" placeholder="Organized by ..."  required>
   </div>
   <div class="form-group">
-    <label for="obj">Objectives *</label>
+    <label for="objective">Objectives *</label>
     <textarea name ="objective" id ="objective" row="6" cols="50" placeholder="Objectives of the event ..."  required></textarea>
   </div>
   <div class="form-group">
@@ -86,10 +79,6 @@
   <div class="form-group">
     <label for="id">User ID *</label>
     <input type="text" name="id" id="id" placeholder="Prepared by [ID]" readonly required />
-  </div>
-  <div class="form-group">
-    <label for="id">Add time stamp here</label>
-    <input type="hidden" name="timestamp" id="timestamp" />
   </div>
   <div class="form-group">
     <label for="summary">Summary *</label>
@@ -112,6 +101,4 @@
 
   <input type="submit">
 </form>
-
-</body>
-</html>
+</div>
