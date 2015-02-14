@@ -77,6 +77,7 @@ $(document).ready(function(){
   </div>
   <div class="form-group">
     <label for="participant">Participants</label>
+	<font color="red">list check box, and allow user to add participant</font>
     <textarea name ="participant" row="6" cols="50" placeholder="A list of participant(s)"></textarea>
   </div>
   <div class="form-group">
