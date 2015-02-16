@@ -1,14 +1,31 @@
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Project Summary Report</title>
 <script>
-$(document).ready(function(){
-    $('.add_more').click(function(e){
-        e.preventDefault();
-        $(this).before("<input name='files[]' type='file'/>");
-    });
-});
+
+// dynamically generate 
+var academicRole ="";
+academicRole += '<select name="role" id="role" required>';
+academicRole += '<option value="organizer">organizer</option>';
+academicRole += '<option value="speaker">speaker</option>';
+academicRole += '<option value="participant">participant</option>';
+academicRole += '</select>';
+
+var cultureRole ="";
+cultureRole += '<select name="role" id="role" required>';
+cultureRole += '<option value="organizer">organizer</option>';
+cultureRole += '<option value="participant">participant</option>';
+cultureRole += '</select>';
+
+function addRole() {
+//var role = val;
+var type = document.getElementById('type').value;
+	if(type=='academic' || type=='pdAU' || type=='pdOther'){
+		document.getElementById('roleDiv').innerHTML = academicRole;
+	} else if(type=='art'){
+		document.getElementById('roleDiv').innerHTML = cultureRole;
+	}
+};
 </script>
 <div class="container">
 <form  enctype="multipart/form-data" action="project-report.php" method="post">
@@ -21,35 +38,39 @@ $(document).ready(function(){
 
   <div class="form-group">
     <label for="dept">Department </label>
-    <select name="dept" required>
+    <select name="dept" name="dept" required>
       <option> </option>
-      <option>Accounting</option>
-      <option>Business Economics</option>
-      <option>Business Information Systems</option>
-      <option>Commerce</option>
-      <option>Finance and Banking</option>
-      <option>Hospitality and Tourism Management</option>
-      <option>Industrial Management</option>
-      <option>Insurance</option>
-      <option>International Business Management</option>
-      <option>Management</option>
-      <option>Marketing</option>
-      <option>Real Estate</option>
-      <option>Ph.D. in Business Administration Program</option>
-      <option>M.Sc. in Financial Economics</option>
-      <option>M.Sc. in Supply Chain Management</option>
+      <option value='acct'>Accounting</option>
+      <option value='be'>Business Economics</option>
+      <option value='bis'>Business Information Systems</option>
+      <option value='acc'>Commerce</option>
+      <option value='fin'>Finance and Banking</option>
+      <option value='htm'>Hospitality and Tourism Management</option>
+      <option value='idm'>Industrial Management</option>
+      <option value='ins'>Insurance</option>
+      <option value='ibm'>International Business Management</option>
+      <option value='mgt'>Management</option>
+      <option value='mkt'>Marketing</option>
+      <option value='real'>Real Estate</option>
+      <option value='phdba'>Ph.D. in Business Administration Program</option>
+      <option value='msfe'>M.Sc. in Financial Economics</option>
+      <option value='msscm'>M.Sc. in Supply Chain Management</option>
     </select>
   </div>
   <div class="form-group">
     <label for="type">Type of the event</label>
-    <select name="type" required>
+    <select name="type" id="type" onchange="addRole();" required>
         <option> - - - - - - </option>
-        <option>Professional Development</option>
-        <option>Academic Service</option>
-        <option>Social Service</option>
-        <option>University Service</option>
-        <option>Functions</option>
+        <option value='academic'>Academic service</option>
+        <option value='art'>Art and culture project</option>
+        <option value='pdAU'>Professional development by AU</option>
+        <option value='pdOther'>Professional development by other organizations</option>
     </select>
+  </div>
+  <div class="form-group">
+    <label for="role">Role</label>
+	<div id='roleDiv'></div>
+
   </div>
   <div class="form-group">
     <label for="topic">Topic of the event *</label>
@@ -100,8 +121,9 @@ $(document).ready(function(){
     <label for="files">Support Documents, e.g., invitation letter, registration confirmation, photos *<br/>
 	<span class="current">Please "zip" the files if you have more than one documents.</span></label><br />
     <!-- input files -->
-	<input name="files[]" type="file" /><br />
-	<input name="files[]" type="file" /><br />
+	<input name="files[]" type="file" id="files[]" size="50 "/><br />
+	<input name="files[]" type="file" id="files[]" size="50 "/><br />
+	<input name="files[]" type="file" id="files[]" size="50 "/>
 	<button class="add_more">Add More Files</button>	
   </div>
 

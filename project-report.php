@@ -27,6 +27,12 @@ if(isset($_SESSION["user_id"])) {
 	}
 	// CREATE & ADD TO FOLDERS
 	
+	
+	$path1= "upload/".$HTTP_POST_FILES['ufile']['name'][0];
+	$path2= "upload/".$HTTP_POST_FILES['ufile']['name'][1];
+	$path3= "upload/".$HTTP_POST_FILES['ufile']['name'][2];	
+	
+	
 }
 
 //include $_SERVER['DOCUMENT_ROOT'].'/git/msmeApps/inc/footer.inc.html.php';
