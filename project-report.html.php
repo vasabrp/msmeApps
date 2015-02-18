@@ -121,9 +121,9 @@ var type = document.getElementById('type').value;
     <label for="files">Support Documents, e.g., invitation letter, registration confirmation, photos *<br/>
 	<span class="current">Please "zip" the files if you have more than one documents.</span></label><br />
     <!-- input files -->
-	<input name="files[]" type="file" id="files[]" size="50 "/><br />
-	<input name="files[]" type="file" id="files[]" size="50 "/><br />
-	<input name="files[]" type="file" id="files[]" size="50 "/>
+	<input name="ulfiles[]" type="file" id="ulfiles[]" size="50 "/><br />
+	<input name="ulfiles[]" type="file" id="ulfiles[]" size="50 "/><br />
+	<input name="ulfiles[]" type="file" id="ulfiles[]" size="50 "/>
 	<button class="add_more">Add More Files</button>	
   </div>
 
