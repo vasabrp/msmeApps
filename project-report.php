@@ -7,14 +7,20 @@ $_SESSION["user_id"] = "440262";
 if(isset($_SESSION["user_id"])) {
 	// ADD TO DB
 	/*
-	if(isset($_POST['school'])&&isset($_POST['dept'])&&isset($_POST['type'])&&isset($_POST['topic'])&&isset($_POST['date'])&&isset($_POST['venue'])&&isset($_POST['organizer'])&&isset($_POST['objective'])&&isset($_POST['owner'])&&isset($_POST['id'])&&isset($_POST['summary'])&&isset($_POST['application'])) {
+	if(isset($_POST['school'])&&isset($_POST['dept'])&&isset($_POST['type'])&&isset($_POST['topic'])&&isset($_POST['date'])&&isset($_POST['venue'])&&isset($_POST['organizer'])&&isset($_POST['objective'])&&isset($_POST['owner'])&&isset($_POST['uid'])&&isset($_POST['summary'])&&isset($_POST['application'])) {
 	*/
-	if(isset($HTTP_POST_FILES['ulfile']['tmp_name'][0]) && !empty($HTTP_POST_FILES['ulfile']['tmp_name'][0])) {
+	if(isset($_POST['school'])&&
+	   isset($_POST['dept'])&&
+	   isset($_POST['type'])&&
+	   isset($_POST['topic'])) {
 	
+
+    	// Clean up input strings
 		$timestampt = date('YmdHis');
 		$school = sanitizeString($_POST['school']);
 		$dept = sanitizeString($_POST['dept']);
 		$type = sanitizeString($_POST['type']);
+		$role = sanitizeString($_POST['role']);
 		$topic = sanitizeString($_POST['topic']);
 		$date = sanitizeString($_POST['date']);
 		$hours = sanitizeString($_POST['hours']);
@@ -23,37 +29,41 @@ if(isset($_SESSION["user_id"])) {
 		$objective = sanitizeString($_POST['objective']);
 		$participant = sanitizeString($_POST['participant']);
 		$owner = sanitizeString($_POST['owner']);
-		$id = sanitizeString($_POST['id']);
+		$uid = sanitizeString($_POST['uid']);
 		$summary = sanitizeString($_POST['summary']);
 		$application = sanitizeString($_POST['application']);
+		$file1 = $file2 = $file3 = $file4 = $file5 = $file6 = "";
 
 		// CREATE & ADD TO FOLDERS
-		// create custom folder here
-		
-		// set paths
-		$path = $_SERVER['DOCUMENT_ROOT']."/uploads/";
-
-		$path1= $path.$HTTP_POST_FILES['ulfile']['name'][0];
-		//$path2= $path.$HTTP_POST_FILES['ulfile']['name'][1];
-		//$path3= $path.$HTTP_POST_FILES['ulfile']['name'][2];	
-
-		//copy file to where you want to store file
-		echo $_SERVER['DOCUMENT_ROOT'];
-		copy($HTTP_POST_FILES['ulfile']['tmp_name'][0], $path1);
-		//copy($HTTP_POST_FILES['ulfile']['tmp_name'][1], $path2);
-		//copy($HTTP_POST_FILES['ulfile']['tmp_name'][2], $path3);
-		
-		// Use this code to display the error or success.
-
-		$filesize1=$HTTP_POST_FILES['ulfile']['size'][0];
-		//$filesize2=$HTTP_POST_FILES['ulfile']['size'][1];
-		//$filesize3=$HTTP_POST_FILES['ulfile']['size'][2];
-
-		if($filesize1==0) {
-			echo "Cannot upload ".$HTTP_POST_FILES['ulfile']['name'][0];
-			echo "<BR />";
+		foreach ($_FILES["ulfiles"]["error"] as $key => $error) {
+			if ($error == UPLOAD_ERR_OK) {
+				$tmp_name = $_FILES["ulfiles"]["tmp_name"][$key];
+				$name = $_FILES["ulfiles"]["name"][$key];
+				// set dept folder here
+				$dept_path = $dept;
+				// set type folder here
+				$type_path = $type;
+				$path = $_SERVER['DOCUMENT_ROOT']."/uploads/".$dept."/".$type."/";				
+				$uploadfile= $path.$name;
+				if (move_uploaded_file($tmp_name, $uploadfile)) {
+					echo "File ".$name." is valid, and was successfully uploaded.\n";
+				} else {
+					echo "Cannot upload ".$name."!\n";
+				}
+			}
 		}
 
+		for ($x=0; $x<6; $x++){
+			echo "<br>File ",$x+1,":", $_FILES["ulfiles"]["name"][$x];
+		}
+		
+		// echo $timestampt, " ", $school , " ",$dept , " ",$topic;
+		
+		// Add to table ''
+		$sql = "INSERT INTO project_report (timestampt, school, dept, type, role, topic, date, hours, venue, organizer, objective, participant, owner, uid, summary, application, file1, file2, file3, file4, file5, file6)
+		VALUES ('John', 'Doe', 'john@example.com')";
+		
+		
 	} else {
 		include 'project-report.html.php';
 	}

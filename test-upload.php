@@ -16,6 +16,9 @@
     <!-- input files -->
 	<input name="ulfiles[]" type="file" id="ulfiles[]" size="50 "/><br />
 	<input name="ulfiles[]" type="file" id="ulfiles[]" size="50 "/><br />
+	<input name="ulfiles[]" type="file" id="ulfiles[]" size="50 "/><br />
+	<input name="ulfiles[]" type="file" id="ulfiles[]" size="50 "/><br />
+	<input name="ulfiles[]" type="file" id="ulfiles[]" size="50 "/><br />
 	<input name="ulfiles[]" type="file" id="ulfiles[]" size="50 "/>
   </div>
 

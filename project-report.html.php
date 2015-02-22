@@ -78,23 +78,23 @@ var type = document.getElementById('type').value;
   </div>
   <div class="form-group">
     <label for="date">Date *</label>
-    <input type="date" name="date" id="date"  placeholder="e.g., 2000-01-01"  required />
+    <input type="date" name="date" id="date"  placeholder="e.g., 2000-01-01"   />
   </div>
   <div class="form-group">
     <label for="hours">Total hours</label>
-    <input type="number" name="hours" placeholder="e.g., 4.0 or 6.5" required />
+    <input type="number" name="hours" placeholder="e.g., 4.0 or 6.5"  />
   </div>
   <div class="form-group">
     <label for="venue">Venue *</label>
-    <input type="text" name="venue" id="venue" placeholder="Venue of the event ..."  required>
+    <input type="text" name="venue" id="venue" placeholder="Venue of the event ..."  >
   </div>
   <div class="form-group">
     <label for="organizer">Organizer *</label>
-    <input type="text" name="organizer" id="organizer" placeholder="Organized by ..."  required>
+    <input type="text" name="organizer" id="organizer" placeholder="Organized by ..."  >
   </div>
   <div class="form-group">
     <label for="objective">Objectives *</label>
-    <textarea name ="objective" id ="objective" row="6" cols="50" placeholder="Objectives of the event ..."  required></textarea>
+    <textarea name ="objective" id ="objective" row="6" cols="50" placeholder="Objectives of the event ..."  ></textarea>
   </div>
   <div class="form-group">
     <label for="participant">Participants</label>
@@ -103,11 +103,11 @@ var type = document.getElementById('type').value;
   </div>
   <div class="form-group">
     <label for="owner">Prepared by *</label>
-    <input type="text" name="owner" id="owner" placeholder="Prepared by [name]" readonly required />
+    <input type="text" name="owner" id="owner" placeholder="Prepared by [name]" readonly  />
   </div>
   <div class="form-group">
     <label for="id">User ID *</label>
-    <input type="text" name="id" id="id" placeholder="Prepared by [ID]" readonly required />
+    <input type="text" name="id" id="id" placeholder="Prepared by [ID]" readonly  />
   </div>
   <div class="form-group">
     <label for="summary">Summary *</label>
@@ -115,7 +115,7 @@ var type = document.getElementById('type').value;
   </div>
   <div class="form-group">
     <label for="application">Application to T&L *</label>
-    <textarea name ="application" id ="application" row="6" cols="50" placeholder="Applied to Teaching and Learning (any T&L or any BIS subjects related to the event)" required ></textarea>
+    <textarea name ="application" id ="application" row="6" cols="50" placeholder="Applied to Teaching and Learning (any T&L or any BIS subjects related to the event)"  ></textarea>
   </div>
   <div class="form-group">
     <label for="files">Support Documents, e.g., invitation letter, registration confirmation, photos *<br/>
@@ -123,8 +123,10 @@ var type = document.getElementById('type').value;
     <!-- input files -->
 	<input name="ulfiles[]" type="file" id="ulfiles[]" size="50 "/><br />
 	<input name="ulfiles[]" type="file" id="ulfiles[]" size="50 "/><br />
+	<input name="ulfiles[]" type="file" id="ulfiles[]" size="50 "/><br />
+	<input name="ulfiles[]" type="file" id="ulfiles[]" size="50 "/><br />
+	<input name="ulfiles[]" type="file" id="ulfiles[]" size="50 "/><br />
 	<input name="ulfiles[]" type="file" id="ulfiles[]" size="50 "/>
-	<button class="add_more">Add More Files</button>	
   </div>
 
   <input type="submit">
