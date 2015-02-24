@@ -38,7 +38,7 @@ var type = document.getElementById('type').value;
 
   <div class="form-group">
     <label for="dept">Department </label>
-    <select name="dept" name="dept" required>
+    <select name="dept" name="dept"  onchange="getFacultyList();" required>
       <option> </option>
       <option value='acct'>Accounting</option>
       <option value='be'>Business Economics</option>
@@ -97,6 +97,13 @@ var type = document.getElementById('type').value;
     <textarea name ="objective" id ="objective" row="6" cols="50" placeholder="Objectives of the event ..."  ></textarea>
   </div>
   <div class="form-group">
+	
+  ** H E R E **
+	show 2 list (dept) and (all)
+	allow to add list item
+	http://stackoverflow.com/questions/17773938/add-a-list-item-through-javascript
+	http://jsfiddle.net/Gmyag/
+	
     <label for="participant">Participants</label>
 	<font color="red">list check box, and allow user to add participant</font>
     <textarea name ="participant" row="6" cols="50" placeholder="A list of participant(s)"></textarea>
